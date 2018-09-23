@@ -1,10 +1,10 @@
-import { NgMatPage } from './app.po';
+import { NgSandboxPage } from './app.po';
 
-describe('ng-mat App', () => {
-  let page: NgMatPage;
+describe('ng-sandbox App', () => {
+  let page: NgSandboxPage;
 
   beforeEach(() => {
-    page = new NgMatPage();
+    page = new NgSandboxPage();
   });
 
   it('should display welcome message', () => {

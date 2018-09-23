@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class NgMatPage {
+export class NgSandboxPage {
   navigateTo() {
     return browser.get('/');
   }
