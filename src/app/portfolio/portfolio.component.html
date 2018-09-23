@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutWrap>
+  <mat-card *ngIf="!showSpinner" fxFlex.gt-xs="450px" fxFlex.sm="50%">
+    <mat-card-header>
+      <img mat-card-avatar src="http://material.angular.io/assets/img/examples/shiba1.jpg" />
+      <mat-card-title>Good boy</mat-card-title>
+      <mat-card-subtitle>Doggo</mat-card-subtitle>
+    </mat-card-header>
+    <mat-form-field>
+      <input matInput placeholder="Image URL" [(ngModel)]="newItem.img" type="url" required #img='ngModel'>
+    </mat-form-field>
+    <mat-card-content>
+      <p>
+        <mat-form-field>
+          <textarea matInput placeholder="Description" [(ngModel)]="newItem.description" type="text" required #desc='ngModel'></textarea>
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="addItem()" [disabled]="!img.valid || !desc.valid">
+        Добавить
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-progress-spinner mode="indeterminate" *ngIf="showSpinner"></mat-progress-spinner>
+  <mat-card fxFlex.gt-xs="450px" fxFlex.sm="50%" *ngFor="let item of items | async">
+    <mat-card-header>
+      <img mat-card-avatar src="http://material.angular.io/assets/img/examples/shiba1.jpg" />
+      <mat-card-title>Good boy</mat-card-title>
+      <mat-card-subtitle>Doggo</mat-card-subtitle>
+      <button mat-icon-button class="matcard-menu-button" [matMenuTriggerFor]="doggeMenu0">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #doggeMenu0="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="sudaMenu0">Сюда</button>
+        <button mat-menu-item [matMenuTriggerFor]="tudaMenu0">Туда</button>
+        <button mat-menu-item (click)="deleteItem(item.id)">Удалить</button>
+      </mat-menu>
+      <mat-menu #sudaMenu0="matMenu">
+        <button mat-menu-item>Ыть!</button>
+        <button mat-menu-item>Уть!</button>
+      </mat-menu>
+      <mat-menu #tudaMenu0="matMenu">
+        <button mat-menu-item>Ать!</button>
+        <button mat-menu-item>Ысь!</button>
+      </mat-menu>
+    </mat-card-header>
+    <img mat-card-image src="{{item.img}}" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{item.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="like()">
+        <mat-icon>mood</mat-icon>
+        Класс!</button>
+      <button mat-button (click)="dislike()">
+        <mat-icon>mood_bad</mat-icon>
+        НиОчень!</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

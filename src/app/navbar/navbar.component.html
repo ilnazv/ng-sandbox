@@ -1,0 +1,46 @@
+<nav>
+  <mat-toolbar color="primary" fxShow fxHide.xs>
+    <a mat-button routerLink="/profile">
+      <div class="nav-profile-image"></div>
+    </a>
+    <a mat-button routerLink="/dashboard">
+      <mat-icon>
+        insert_photo
+      </mat-icon>
+    </a>
+    <a mat-button routerLink="/portfolio">
+      <span>Portfolio</span>
+    </a>
+    <a mat-button routerLink="/about">
+      <span>About</span>
+    </a>
+    <a mat-button routerLink="/contact">
+      <span>Contact</span>
+    </a>
+  </mat-toolbar>
+  <mat-toolbar color="primary" fxHide fxShow.xs>
+    <a mat-button routerLink="/profile">
+      <div class="nav-profile-image"></div>
+    </a>
+    <button mat-icon-button [matMenuTriggerFor]="mainMenu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #mainMenu="matMenu">
+      <button mat-menu-item routerLink="/dashboard">
+        <mat-icon>insert_photo</mat-icon>
+      </button>
+      <button mat-menu-item routerLink="/portfolio">
+        <mat-icon>description</mat-icon>
+        <span>Portfolio</span>
+      </button>
+      <button mat-menu-item routerLink="/about">
+        <mat-icon>account_box</mat-icon>
+        <span>About</span>
+      </button>
+      <button mat-menu-item routerLink="/contact">
+        <mat-icon>email</mat-icon>
+        <span>Contact</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</nav>

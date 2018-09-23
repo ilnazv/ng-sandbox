@@ -1,0 +1,116 @@
+@primary-color:rgb(38, 52, 117);
+@secondary_color: rgba(38, 53, 117, 0.568);
+
+.profile-image-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.profile-open-tasks-box {
+  // width: 100px;
+  min-width: 0px;
+  width: 70px;
+  height: 70px;
+  background: #3d7eb7;
+  // border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px;
+  // padding-right: 40px;  
+  position: fixed;    
+  // left: 260px;
+  right: 0;
+
+  .profile-open-tasks {
+    margin: 0;
+    color: ghostwhite;
+    font-size: 14px;
+    white-space: normal;
+    text-align: left;
+    line-height: normal;
+  }
+}
+
+
+div.profile-image {
+  background-image: url("../../assets/profile-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  width: 230px;
+  height: 230px;
+  margin-bottom: 30px;
+  position: absolute;
+}
+
+div.profile-image-holder {    
+  width: 230px;
+  height: 230px;
+  margin-bottom: 30px;  
+  position: relative;
+}
+
+.profile-title-block {
+  display: flex;
+  margin-bottom: 20px;
+  .profile-name {
+    font-size: 24px;
+    color: @primary-color;
+    margin: 0;
+    padding: 8px;
+  }
+  .green-icon {
+    color:#8bc34a;
+  }
+  .profile-position {
+    font-size: 16px;
+    color: @secondary_color;
+    margin: 0;
+    padding: 8px;
+  }
+}
+
+.profile-info {
+  padding: 12px;
+  .profile-info-first-row {
+    display: flex;
+    margin-bottom: 14px;
+    .profile-info-block {
+      margin-right: 10px;
+      padding: 4px;
+      font-size: 24px;
+      font-weight: bold;
+      .profile-info-text {
+        color: @secondary_color;
+        font-size: 18px;
+      }
+    }
+  }
+  .profile-info-statistics {
+    .profile-info-statistics-title {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .profile-info-statistics-content{
+        padding: 4px;
+        display: flex;
+        color: @secondary_color;
+        .profile-info-statistics-overall {
+            display: flex;
+            .profile-info-statistics-overall-block{
+                display: block;
+                .profile-info-statistics-overall-number{
+                    &::after{
+                        margin-left: 20px;
+                        content: '·';
+                        font-size: 40px;
+                        line-height: 10px;
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+  }  
+}
+
