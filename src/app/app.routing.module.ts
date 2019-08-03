@@ -24,12 +24,12 @@ export const routes: Routes = [
                 }
             },
             {
-                path: 'portfolio',
+                path: 'cards',
                 component: PortfolioComponent,
                 data: {
-                    page: 'portfolio',
+                    page: 'cards',
                     meta: {
-                        title: 'Portfolio',
+                        title: 'Cards',
                         'theme-color': '#ffffff'
                     }
                 }

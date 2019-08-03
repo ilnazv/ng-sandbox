@@ -1,22 +1,9 @@
-<!-- <div class="center" fxLayout="column" fxLayoutAlign="center center">
-  <p>Котик раненый идёт, ушко пёсика грызёт</p>
-  <img src="https://pp.userapi.com/c639519/v639519561/65e54/qAhJ2ghcDG0.jpg" alt="cat">  
-</div>
- -->
-
 <div class="projects">
-  <span class="title">Projects</span>
-  <div class="holder">
-    <div class="fake-projects-container" fxLayout="row wrap" fxLayoutAlign="start center">
-      <mat-card class="fake-card" *ngFor="let number of [0, 1, 2, 3, 4, 5]; let even = even;">
-        <span *ngIf="even" class="fake-name">holder for name</span>
-        <span *ngIf="!even" class="fake-name">Operating System and Concurrency</span>
-      </mat-card>
-    </div>
+    <span class="title">Projects</span>
+    <mat-progress-spinner mode="indeterminate" *ngIf="loading"></mat-progress-spinner>
     <div class="projects-container" fxLayout="row wrap" fxLayoutAlign="start center">
-      <mat-card class="card" *ngFor="let card of cards | async" [ngStyle]="{ 'border-color': card.color }">
-        <span>{{ card.name }}</span>
-      </mat-card>
+        <mat-card class="card" *ngFor="let card of cards | async" [ngStyle]="{ 'border-color': card.color }">
+            <span>{{ card.name }}</span>
+        </mat-card>
     </div>
-  </div>
 </div>

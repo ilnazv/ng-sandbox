@@ -12,7 +12,7 @@ export const fadeAnimation =
             ),
             query(':leave',
                 style({
-                    position: 'absolute',
+                    position: 'fixed',
                     opacity: 1,
                     transform: 'translateY(-10%)',
                     'transform-origin': 'left top'

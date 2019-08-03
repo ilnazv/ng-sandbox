@@ -31,17 +31,7 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #doggeMenu0="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="sudaMenu0">Сюда</button>
-        <button mat-menu-item [matMenuTriggerFor]="tudaMenu0">Туда</button>
         <button mat-menu-item (click)="deleteItem(item.id)">Удалить</button>
-      </mat-menu>
-      <mat-menu #sudaMenu0="matMenu">
-        <button mat-menu-item>Ыть!</button>
-        <button mat-menu-item>Уть!</button>
-      </mat-menu>
-      <mat-menu #tudaMenu0="matMenu">
-        <button mat-menu-item>Ать!</button>
-        <button mat-menu-item>Ысь!</button>
       </mat-menu>
     </mat-card-header>
     <img mat-card-image src="{{item.img}}" alt="Photo of a Shiba Inu">

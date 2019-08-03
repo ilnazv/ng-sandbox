@@ -30,10 +30,10 @@ export class PortfolioComponent implements OnInit {
     this.itemCollectionRef = this.db.collection<IItem>('items');
     this.items = this.itemCollectionRef.snapshotChanges().pipe(
       map(actions => {
+        this.showSpinner = false;
         return actions.map(action => {
           const data = action.payload.doc.data() as IItem;
           const id = action.payload.doc.id;
-          this.showSpinner = false;
           return { id, ...data };
         });
       })
