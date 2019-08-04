@@ -42,6 +42,11 @@ export const fadeAnimation =
                     transform: 'translateX(-100%)'
                 })]
             ),
+            query('.transition-left-to-right-abs', [
+                style({
+                    transform: 'translateX(-100%)'
+                })], { optional: true }
+            ),
             query('.profile-image',
                 style({
                     position: 'fixed',
@@ -93,6 +98,9 @@ export const fadeAnimation =
                 ),
                 query('.transition-left-to-right',
                     animate('0.5s ease')
+                ),
+                query('.transition-left-to-right-abs',
+                    animate('0.5s ease'), { optional: true }
                 ),
                 query('.fade-in',
                     animate('0.5s ease',
