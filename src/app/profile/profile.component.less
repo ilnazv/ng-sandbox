@@ -143,20 +143,27 @@ div.profile-image-holder {
   }
 }
 
+.table-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 250px;
+}
+
 .digits {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .digit {
-    &-wrapper {
-        position: relative;
-        overflow: hidden;
-        height: 26px;
-        width: 15px;
-    }
+  &-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 26px;
+    width: 15px;
+  }
 
-    &-container {
-        position: absolute;
-    }
+  &-container {
+    position: absolute;
+  }
 }

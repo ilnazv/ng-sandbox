@@ -24,6 +24,12 @@ export const fadeAnimation =
                     transform: 'scale(0.01)'
                 })]
             ),
+            query('.transition-scale-in-1', [
+                style({
+                    opacity: 0,
+                    transform: 'scale(0.01)'
+                })]
+            ),
             query('.transition-right-to-left', [
                 style({
                     opacity: 0,
@@ -115,6 +121,9 @@ export const fadeAnimation =
                         style({
                             opacity: 1
                         }))
+                ),
+                query('.transition-scale-in-1',
+                    animate('1.5s ease'), { optional: true }
                 ),
                 query('.profile-info-statistics',
                     animate('0.5s ease')),
