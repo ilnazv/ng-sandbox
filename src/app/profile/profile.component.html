@@ -23,14 +23,15 @@
         <div class="profile-info-block">
             <div class="digits">
                 <div class="digit-wrapper">
-                    <div class="digit-container transition-bottom-to-top-abs">
+                    <div class="digit-container transition-top-to-bot-abs">
                         <div>1</div>
+                        <div>0</div>
                         <div>9</div>
                         <div>8</div>
                     </div>
                 </div>
                 <div class="digit-wrapper">
-                    <div class="digit-container transition-bottom-to-top-abs">
+                    <div class="digit-container transition-top-to-bot-abs">
                         <div>6</div>
                         <div>5</div>
                         <div>4</div>
@@ -39,20 +40,22 @@
                     </div>
                 </div>
                 <div class="digit-wrapper">
-                    <div class="digit-container transition-bottom-to-top-abs">
+                    <div class="digit-container transition-top-to-bot-abs">
                         <div>4</div>
                         <div>3</div>
                         <div>2</div>
                         <div>1</div>
+                        <div>0</div>
                         <div>9</div>
                         <div>8</div>
                         <div>7</div>
                     </div>
                 </div>
                 <div class="digit-wrapper">
-                    <div class="digit-container transition-bottom-to-top-abs">
+                    <div class="digit-container transition-top-to-bot-abs">
                         <div>2</div>
                         <div>1</div>
+                        <div>0</div>
                         <div>9</div>
                         <div>8</div>
                         <div>7</div>
@@ -62,56 +65,100 @@
                         <div>3</div>
                     </div>
                 </div>
+                <span class="profile-info-text transition-right-to-left">hours</span>
             </div>
-            <span class="profile-info-text">hours</span>
             <div class="profile-info__line-container">
-                <svg class="profile-info__line transition-left-to-right-abs" viewBox="0 0 800 600"
+                <svg class="profile-info__line transition-left-to-right-abs" viewBox="0 0 800 300"
                     xmlns="http://www.w3.org/2000/svg"> 
-                    <path class="profile-info__line-path"
-                        d="M 0 300 Q 50 200 100 300 Q 150 400 200 300 Q 250 250 300 300 C 350 400 350 150 400 300 C 450 350 450 350 500 300 C 550 250 550 300 600 300 C 600 300 650 350 700 300 C 750 250 775 300 800 250" />
+                    <path class="profile-info__line-path" d="M 0 150
+                        Q 50  100 100 150
+                        Q 150 200 200 150
+                        Q 250 125 300 150
+                        C 350 200 350 75 400 150
+                        C 450 175 450 175 500 150
+                        C 550 125 550 150 600 150
+                        C 600 150 650 175 700 150
+                        C 750 125 775 150 800 125" />
                 </svg>
             </div>
         </div>
         <div class="profile-info-block">
             <div class="digits">
                 <div class="digit-wrapper">
-                    <div class="digit-container transition-bottom-to-top-abs">
+                    <div class="digit-container transition-top-to-bot-abs">
                         <div>2</div>
                         <div>1</div>
+                        <div>0</div>
                         <div>9</div>
                     </div>
                 </div>
-                <span class="transition-scale-in-1">.</span>
+                <span class="fade-in">.</span>
                 <div class="digit-wrapper">
-                    <div class="digit-container transition-bottom-to-top-abs">
+                    <div class="digit-container transition-top-to-bot-abs">
                         <div>4</div>
                         <div>3</div>
                         <div>2</div>
                         <div>1</div>
+                        <div>0</div>
                         <div>9</div>
                     </div>
                 </div>
                 <span>m</span>
+                <span class="profile-info-text transition-right-to-left">sales</span>
             </div>
-            <span class="profile-info-text">sales</span>
             <div class="profile-info__line-container">
-                <svg class="profile-info__line transition-left-to-right-abs" viewBox="0 0 800 600"
+                <svg class="profile-info__line transition-left-to-right-abs" viewBox="0 0 800 300"
                     xmlns="http://www.w3.org/2000/svg"> 
-                    <path class="profile-info__line-path"
-                        d="M 0 300 Q 50 300 100 250 C 150 250 150 200 200 250 C 300 250 250 350 400 300 C 450 250 450 300 500 300 C 550 350 550 350 650 300 C 700 200 750 350 800 250" />
+                    <path class="profile-info__line-path" d="
+                        M 0  150
+                        Q 50 150 100 175
+                        C 150 125 150 100 200 175
+                        C 300 125 250 175 400 150
+                        C 450 125 450 150 500 150
+                        C 550 175 550 175 650 150
+                        C 700 100 750 175 800 175" />
                 </svg>
             </div>
         </div>
     </div>
     <div class="profile-info-statistics">
-        <span class="profile-info-statistics-title">
+        <span class="profile-info-statistics-title transition-left-to-right-abs">
             Statistics
         </span>
         <div class="profile-info-statistics-content">
             <div class="profile-info-statistics-hours">
-                
+                <svg class="progress-ring" width="120" height="120">
+                    <circle class="progress-ring__circle" stroke="#3f51b5" stroke-width="4" fill="transparent" r="52"
+                        cx="60" cy="60" />
+                </svg>
+                <div class="profile-info-statistics-hours-item-container">
+                    <div class="hours-container">
+                        <div class="hours">
+                            <div class="digit-wrapper digit-wrapper_wider">
+                                <div class="digit-container transition-top-to-bot-abs">
+                                    <div>2</div>
+                                    <div>1</div>
+                                    <div>0</div>
+                                    <div>9</div>
+                                </div>
+                            </div>
+                            <div class="digit-wrapper digit-wrapper_wider">
+                                <div class="digit-container transition-top-to-bot-abs">
+                                    <div>5</div>
+                                    <div>4</div>
+                                    <div>3</div>
+                                    <div>2</div>
+                                    <div>1</div>
+                                    <div>0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fade-in">/40</span>
+                    </div>
+                    <span class="hours-text fade-in">hours</span>
+                </div>
             </div>
-            <div class="profile-info-statistics-overall">
+            <div class="profile-info-statistics-overall transition-bot-to-top-abs">
                 <span class="profile-info-statistics-overall-period">
                     Current week
                     <mat-icon color="primary">keyboard_arrow_down</mat-icon>

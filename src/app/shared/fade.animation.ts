@@ -1,6 +1,6 @@
 // fade.animation.ts
 
-import { trigger, animate, transition, style, query, group } from '@angular/animations';
+import { trigger, animate, transition, style, query, group, AnimationOptions } from '@angular/animations';
 
 export const fadeAnimation =
     trigger('fadeAnimation', [
@@ -28,7 +28,7 @@ export const fadeAnimation =
                 style({
                     opacity: 0,
                     transform: 'scale(0.01)'
-                })]
+                })], { optional: true }
             ),
             query('.transition-right-to-left', [
                 style({
@@ -53,9 +53,19 @@ export const fadeAnimation =
                     transform: 'translateX(-100%)'
                 })], { optional: true }
             ),
-            query('.transition-bottom-to-top-abs', [
+            query('.transition-bot-to-top-abs', [
+                style({
+                    transform: 'translateY(150%)'
+                })], { optional: true }
+            ),
+            query('.transition-top-to-bot-abs', [
                 style({
                     transform: 'translateY(-100%)'
+                })], { optional: true }
+            ),
+            query('.progress-ring__circle', [
+                style({
+                    'stroke-dashoffset': '326.726'
                 })], { optional: true }
             ),
             query('.profile-image',
@@ -72,11 +82,6 @@ export const fadeAnimation =
                     opacity: 0
                 })
             ),
-            query('.profile-info-statistics',
-                style({
-                    transform: 'translateX(-150%)'
-                })
-            ),
             group([
                 query('.profile-image',
                     animate('0.5s ease', style({
@@ -85,8 +90,8 @@ export const fadeAnimation =
                         'background-repeat': 'no-repeat',
                         'background-position': 'center',
                         'border-radius': '10px',
-                        'width': '230px',
-                        height: '230px',
+                        'width': '200px',
+                        height: '200px',
                         'margin-bottom': '30px',
                         position: 'fixed',
                         left: '24px',
@@ -110,11 +115,17 @@ export const fadeAnimation =
                 query('.transition-left-to-right',
                     animate('0.5s ease')
                 ),
-                query('.transition-bottom-to-top-abs',
+                query('.transition-top-to-bot-abs',
                     animate('1.5s ease'), { optional: true }
+                ),
+                query('.transition-bot-to-top-abs',
+                    animate('0.5s ease'), { optional: true }
                 ),
                 query('.transition-left-to-right-abs',
                     animate('0.5s ease'), { optional: true }
+                ),
+                query('.progress-ring__circle',
+                    animate('1.5s cubic-bezier(.88,.01,.56,1.01)'), { optional: true }
                 ),
                 query('.fade-in',
                     animate('0.5s ease',
@@ -125,12 +136,8 @@ export const fadeAnimation =
                 query('.transition-scale-in-1',
                     animate('1.5s ease'), { optional: true }
                 ),
-                query('.profile-info-statistics',
-                    animate('0.5s ease')),
-            ]),
-            group([
                 query('.transition-scale-in',
-                    animate('0.5s ease')
+                    animate('0.5s ease'), { delay: '0.5s'}
                 ),
             ])
         ])
