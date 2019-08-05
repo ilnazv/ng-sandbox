@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href https://ilnazv.github.io/ng-sandbox/ && ngh -r https://github.com/ilnazv/ng-sandbox.git --no-silent"
+    "deploy": "ng build --prod --base-href https://ilnaz.me/ng-sandbox/ && ngh -r https://github.com/ilnazv/ng-sandbox.git --no-silent"
   },
   "private": true,
   "dependencies": {
