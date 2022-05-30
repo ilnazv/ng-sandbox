@@ -22,6 +22,7 @@ import { provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore } from '@angular/fire/firestore';
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { getFirestore } from 'firebase/firestore';
     provideFirestore(() => getFirestore())
   ],
   providers: [
+    {provide: APP_BASE_HREF, useValue: '/'},
     GetImagesService
   ],
   bootstrap: [AppComponent]
