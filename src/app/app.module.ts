@@ -2,9 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AngularFireModule } from 'angularfire2';
 import { environment } from 'environments/environment';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -18,10 +16,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { GetImagesService } from './portfolio/getimages.service';
 import { ProfileComponent } from './profile/profile.component';
-import { MetaModule } from '@ngx-meta/core';
 import { AppRoutingModule } from './app.routing.module';
-import { HttpClientModule } from '../../node_modules/@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http';
+import { provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore } from '@angular/fire/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
 @NgModule({
   declarations: [
@@ -41,9 +41,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     FlexLayoutModule,
     BrowserAnimationsModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    MetaModule.forRoot()
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
   ],
   providers: [
     GetImagesService

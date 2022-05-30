@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { MetaGuard } from '@ngx-meta/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AboutComponent } from './about/about.component';
@@ -10,7 +9,6 @@ import { ProfileComponent } from './profile/profile.component';
 export const routes: Routes = [
     {
         path: '',
-        canActivateChild: [MetaGuard],
         children: [
             {
                 path: 'dashboard',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 
 export interface IItem {
   id?: string;
@@ -16,7 +16,7 @@ export interface IItem {
   styleUrls: ['./portfolio.component.less']
 })
 export class PortfolioComponent implements OnInit {
-  itemCollectionRef: AngularFirestoreCollection<IItem>;
+  itemCollectionRef: any;
   items: Observable<IItem[]>;
   newItem: IItem = {
     description: '',
@@ -24,17 +24,16 @@ export class PortfolioComponent implements OnInit {
   };
   showSpinner = true;
 
-  constructor(private snackBar: MatSnackBar, private db: AngularFirestore) { }
+  constructor(private snackBar: MatSnackBar, private db: Firestore) { }
 
   ngOnInit() {
-    this.itemCollectionRef = this.db.collection<IItem>('items');
-    this.items = this.itemCollectionRef.snapshotChanges().pipe(
+    this.itemCollectionRef = collection(this.db, 'items');
+    this.items = collectionData(this.itemCollectionRef).pipe(
       map(actions => {
         this.showSpinner = false;
         return actions.map(action => {
           const data = action.payload.doc.data() as IItem;
-          const id = action.payload.doc.id;
-          return { id, ...data };
+          return { ...data };
         });
       })
     );
