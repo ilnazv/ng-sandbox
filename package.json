@@ -2,7 +2,7 @@
   "name": "ng-sandbox",
   "version": "0.0.0",
   "license": "MIT",
-  "homepage": "https://ilnaz.me/ng-sandbox/",
+  "homepage": "https://ilnazv.github.io/ng-sandbox/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host=0.0.0.0 --disable-host-check",
