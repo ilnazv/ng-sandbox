@@ -1,43 +1,43 @@
 <nav>
   <mat-toolbar color="primary" fxShow fxHide.xs>
-    <a mat-button routerLink="/profile">
+    <a mat-button routerLink="/profile" skipLocationChange>
       <div class="nav-profile-image"></div>
     </a>
-    <a mat-button routerLink="/dashboard">
+    <a mat-button routerLink="/dashboard" skipLocationChange>
       <mat-icon>
         insert_photo
       </mat-icon>
     </a>
-    <a mat-button routerLink="/cards">
+    <a mat-button routerLink="/cards" skipLocationChange>
       <span>Cards</span>
     </a>
-    <a mat-button routerLink="/about">
+    <a mat-button routerLink="/about" skipLocationChange>
       <span>About</span>
     </a>
-    <a mat-button routerLink="/contact">
+    <a mat-button routerLink="/contact" skipLocationChange>
       <span>Contact</span>
     </a>
   </mat-toolbar>
   <mat-toolbar color="primary" fxHide fxShow.xs>
-    <a mat-button routerLink="/profile">
+    <a mat-button routerLink="/profile" skipLocationChange>
       <div class="nav-profile-image"></div>
     </a>
     <button mat-icon-button [matMenuTriggerFor]="mainMenu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #mainMenu="matMenu">
-      <button mat-menu-item routerLink="/dashboard">
+      <button mat-menu-item routerLink="/dashboard" skipLocationChange>
         <mat-icon>insert_photo</mat-icon>
       </button>
-      <button mat-menu-item routerLink="/cards">
+      <button mat-menu-item routerLink="/cards" skipLocationChange>
         <mat-icon>description</mat-icon>
         <span>Cards</span>
       </button>
-      <button mat-menu-item routerLink="/about">
+      <button mat-menu-item routerLink="/about" skipLocationChange>
         <mat-icon>account_box</mat-icon>
         <span>About</span>
       </button>
-      <button mat-menu-item routerLink="/contact">
+      <button mat-menu-item routerLink="/contact" skipLocationChange>
         <mat-icon>email</mat-icon>
         <span>Contact</span>
       </button>
